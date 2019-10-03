@@ -16,7 +16,7 @@ module.exports = (robot) ->
   robot.respond /hi|hello/i, (res) ->
     res.send "How do you do?"
 
-  robot.hear /pick one|call out|random/, (res) ->
+  robot.hear /pick one|call out|random|random one/, (res) ->
     res.reply res.random students
 
 
