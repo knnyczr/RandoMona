@@ -8,11 +8,16 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+students = require './students.js'
+
+
 module.exports = (robot) ->
 
   robot.respond /hi|hello/i, (res) ->
-      res.send "How do you do?"
+    res.send "How do you do?"
 
+  robot.hear /pick one|call out|random/, (res) ->
+    res.reply res.random students
 
 
 
