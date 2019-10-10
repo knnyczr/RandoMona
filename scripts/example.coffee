@@ -16,11 +16,11 @@ module.exports = (robot) ->
   robot.respond /hi|hello/i, (res) ->
     res.send "How do you do?"
 
-  robot.hear /pick one|random one/i, (res) ->
+  robot.hear /pick one|one|random one/i, (res) ->
     res.reply res.random students
 
   robot.hear /q me/i, (req, res) ->
-    res.reply "#{req.user}"
+    res.reply "hello #{req.user.name}"
     # queue.push res.message.user.name
 
   # robot.hear /next/, (res) ->
