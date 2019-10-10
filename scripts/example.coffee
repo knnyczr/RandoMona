@@ -10,21 +10,16 @@
 
 students = require './students.js'
 
-# class Queue 
-#   constructor: (@name) ->
-#     @listOfStudents = []
-
-
 module.exports = (robot) ->
   queue = []
 
   robot.respond /hi|hello/i, (res) ->
     res.send "How do you do?"
 
-  robot.hear /pick one|call out|random|random one/, (res) ->
+  robot.hear /pick one|random one/i, (res) ->
     res.reply res.random students
 
-  robot.hear /q me/, (req, res) ->
+  robot.hear /q me/i, (req, res) ->
     res.reply req.user
     # queue.push res.message.user.name
 
