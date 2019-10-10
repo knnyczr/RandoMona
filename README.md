@@ -16,6 +16,6 @@ To create a queue of students waiting to be helped. RandoMona is always waiting 
 `q me` will add the student who typed this command to the queue. <br>
 `next` will call the next student on the list. <br>
 
-if no students are on the list. 
+if no students are on the list. <br>
 :tada: The Queue is empty party on! :tada:
 
