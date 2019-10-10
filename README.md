@@ -17,5 +17,5 @@ To create a queue of students waiting to be helped. RandoMona is always waiting 
 `next` will call the next student on the list. <br>
 
 if no students are on the list. 
-`:tada: The Queue is empty party on! :tada:`
+:tada: The Queue is empty party on! :tada:
 
