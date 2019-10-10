@@ -9,7 +9,6 @@ In hopes of creating automated systems through Slack using Hubot's Slack adapter
 
 ## Commands you want to use
 With RandoMona added to the private channel you can `@RandoMona` and/or use the following commands to invoke her instance. 
-
 When RandoMona is **waiting** for a command you do not need to direct your message `@RandoMona`
 
 
@@ -19,12 +18,11 @@ To create a queue of students waiting to be helped. RandoMona is always **waitin
 `q me` will add the student who typed this command to the queue. <br>
 `next` will call the next student on the list. <br>
 
-> if no students are on the list. <br>
+> if no students are on the list. She will send:<br>
 > :tada: The Queue is empty party on! :tada:
 
 ### Random Student
-When picking a random student <br>
-
+When picking a random student
 RandoMona is always **waiting** for the following commands: <br>
 
 `random one` <br>
