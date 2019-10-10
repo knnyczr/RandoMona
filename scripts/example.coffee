@@ -8,7 +8,7 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-# students = require './students.js'
+students = require './students.js'
 
 module.exports = (robot) ->
   queue = []
