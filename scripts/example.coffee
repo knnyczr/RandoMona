@@ -27,10 +27,12 @@ module.exports = (robot) ->
   robot.hear /q me/, (res) ->
     queue.push {res.message.user.name}
 
+  robot.hear /next/, (res) ->
+    res.reply queue
+
   # robot.hear /next/, (res) ->
   #   res.reply "Next: #{queue[0]}, and upnext is #{queue[1]}"
   #   queue.pop()
-
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
