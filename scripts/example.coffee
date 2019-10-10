@@ -9,6 +9,11 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 students = require './students.js'
+queue = []
+
+# class Queue 
+#   constructor: (@name) ->
+#     @listOfStudents = []
 
 
 module.exports = (robot) ->
@@ -19,7 +24,12 @@ module.exports = (robot) ->
   robot.hear /pick one|call out|random|random one/, (res) ->
     res.reply res.random students
 
+  robot.hear /q me/, (res) ->
+    queue.push {res.message.user.name}
 
+  robot.hear /next/, (res) ->
+    res.reply "Next: #{queue[0]}, and upnext is #{queue[1]}"
+    queue.pop()
 
 
   # robot.hear /badger/i, (res) ->
