@@ -40,7 +40,7 @@ RandoMona is always **waiting** for the following commands: <br>
 
 `time` <br>
 
-> this gives the server's time where RandoMona's instance was created.
-> the response looks like: `Server time is: Thu Oct 10 2019 00:20:00 GMT-0400 (Eastern Daylight Time)`
+> This gives the server's time where RandoMona's instance was created. <br>
+> The response looks like: `Server time is: Thu Oct 10 2019 00:20:00 GMT-0400 (Eastern Daylight Time)`
 
 
