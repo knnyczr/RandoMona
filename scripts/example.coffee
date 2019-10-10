@@ -23,7 +23,7 @@ module.exports = (robot) ->
     res.reply "hello #{res.user.name}"
     # queue.push res.message.user.name
   
-  robot.router.post '/hubot/chatsecrets/:room', (req, res) ->
+  robot.router.post '/hubot/chatsecrets/sei-826-graders', (req, res) ->
     room   = req.params.room
     data   = if req.body.payload? then JSON.parse req.body.payload else req.body
     secret = data.secret
