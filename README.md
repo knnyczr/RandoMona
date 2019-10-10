@@ -11,6 +11,10 @@ In hopes of creating automated systems through Slack using Hubot's Slack adapter
 With RandoMona added to the private channel you can `@RandoMona` and/or use the following commands to invoke her instance. 
 When RandoMona is **waiting** for a command you do not need to direct your message `@RandoMona`
 
+<br>
+Once RandoMona is installed, and invited to the room make sure to: 
+`@RandoMona the rules`
+<br>
 
 ### Queue
 To create a queue of students waiting to be helped. RandoMona is always **waiting** for the following commands. <br>
