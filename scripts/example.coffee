@@ -25,8 +25,11 @@ module.exports = (robot) ->
     # res.send "You're in, #{robot.brain.userForName(res.message.user.name)}!"
   
   robot.hear /next/i, (res) ->
-    res.reply "Next: #{queue[0]},"
-    queue.pop()
+    if queue[0] is undefined 
+      res.send ":tada: The Queue is empty party on! :tada:"
+    else
+      res.reply "Next: #{queue[0]},"
+      queue.pop()
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
