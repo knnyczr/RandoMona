@@ -24,11 +24,12 @@ module.exports = (robot) ->
   robot.hear /pick one|call out|random|random one/, (res) ->
     res.reply res.random students
 
-  robot.hear /q me/, (res) ->
-    queue.push res.message.user.name
+  robot.hear /q me/, (req, res) ->
+    res.reply req.user
+    # queue.push res.message.user.name
 
-  robot.hear /next/, (res) ->
-    res.reply queue
+  # robot.hear /next/, (res) ->
+  #   res.reply queue
 
   # robot.hear /next/, (res) ->
   #   res.reply "Next: #{queue[0]}, and upnext is #{queue[1]}"
