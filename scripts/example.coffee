@@ -20,7 +20,7 @@ module.exports = (robot) ->
     res.reply res.random students
 
   robot.hear /q me/i, (res) ->
-    res.send "You're in, #{robot.brain.userForName(msg.message.user.name}!"
+    res.send "You're in, #{robot.brain.userForName(msg.message.user.name)}!"
     # queue.push res.message.user.name
   
   # robot.hear /next/i, (res) ->
