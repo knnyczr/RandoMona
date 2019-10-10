@@ -8,7 +8,7 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-students = require './students.js'
+# students = require './students.js'
 
 module.exports = (robot) ->
   queue = []
@@ -20,7 +20,7 @@ module.exports = (robot) ->
     res.reply res.random students
 
   robot.hear /q me/i, (res) ->
-    res.send "You're in, #{robot.brain.userForName(msg.message.user.name)}!"
+    res.send "You're in, #{robot.brain.userForName(res.message.user.name)}!"
     # queue.push res.message.user.name
   
   # robot.hear /next/i, (res) ->
