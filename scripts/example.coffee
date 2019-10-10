@@ -25,7 +25,7 @@ module.exports = (robot) ->
     res.reply res.random students
 
   robot.hear /q me/, (res) ->
-    queue.push {res.message.user.name}
+    queue.push res.message.user.name
 
   robot.hear /next/, (res) ->
     res.reply queue
