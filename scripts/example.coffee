@@ -9,7 +9,6 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 students = require './students.js'
-queue = []
 
 # class Queue 
 #   constructor: (@name) ->
@@ -17,6 +16,7 @@ queue = []
 
 
 module.exports = (robot) ->
+  queue = []
 
   robot.respond /hi|hello/i, (res) ->
     res.send "How do you do?"
