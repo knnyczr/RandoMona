@@ -20,24 +20,13 @@ module.exports = (robot) ->
     res.reply res.random students
 
   robot.hear /q me/i, (req, res) ->
-    res.reply "hello #{res.user.name}"
+    queue.push "#{res.message.user.name}"
+    res.send "You're in, #{res.message.user.name}!"
     # queue.push res.message.user.name
   
-  robot.router.post '/hubot/chatsecrets/sei-826-graders', (req, res) ->
-    room   = req.params.room
-    data   = if req.body.payload? then JSON.parse req.body.payload else req.body
-    secret = data.secret
-
-    robot.messageRoom room, "I have a secret: #{secret}"
-
-    res.send 'OK'
-
-  # robot.hear /next/, (res) ->
-  #   res.reply queue
-
-  # robot.hear /next/, (res) ->
-  #   res.reply "Next: #{queue[0]}, and upnext is #{queue[1]}"
-  #   queue.pop()
+  robot.hear /next/i, (res) ->
+    res.reply "Next: #{queue[0]}, and upnext is #{queue[1]}"
+    queue.pop()
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
