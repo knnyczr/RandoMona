@@ -19,9 +19,8 @@ module.exports = (robot) ->
   robot.hear /pick one|one|random one/i, (res) ->
     res.reply res.random students
 
-  robot.hear /q me/i, (req, res) ->
-    # queue.push "#{res.message.user.name}"
-    res.send "You're in, #{res.message.user.name}!"
+  robot.hear /q me/i, (res) ->
+    res.send "You're in, #{robot.brain.userForName(msg.message.user.name}!"
     # queue.push res.message.user.name
   
   # robot.hear /next/i, (res) ->
