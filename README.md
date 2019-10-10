@@ -35,11 +35,12 @@ RandoMona is always **waiting** for the following commands: <br>
 > this command will look into a neighboring file called `students.js` that holds this app's current student list
 
 ### Time
-> This is a hubot's built in feature.
+This is a hubot's built in feature.
 RandoMona is always **waiting** for the following commands: <br> 
 
 `time` <br>
 
 > this gives the server's time where RandoMona's instance was created.
+> the response looks like: `Server time is: Thu Oct 10 2019 00:20:00 GMT-0400 (Eastern Daylight Time)`
 
 
