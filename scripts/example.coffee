@@ -20,13 +20,13 @@ module.exports = (robot) ->
     res.reply res.random students
 
   robot.hear /q me/i, (req, res) ->
-    queue.push "#{res.message.user.name}"
+    # queue.push "#{res.message.user.name}"
     res.send "You're in, #{res.message.user.name}!"
     # queue.push res.message.user.name
   
-  robot.hear /next/i, (res) ->
-    res.reply "Next: #{queue[0]}, and upnext is #{queue[1]}"
-    queue.pop()
+  # robot.hear /next/i, (res) ->
+  #   res.reply "Next: #{queue[0]}, and upnext is #{queue[1]}"
+  #   queue.pop()
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
