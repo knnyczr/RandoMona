@@ -35,6 +35,7 @@ module.exports = (robot) ->
     res.send res.random morningReplies
 
   robot.hear /funnies/i, (res) ->
+    res.reply "gotcha"
     robot.http("https://api.giphy.com/v1/gifs/random?api_key=#{process.env.HUBOT_ENV_GIPHY}&tag=funny&rating=pg-13")
       .get() (err, res, body) ->
         res.send "Got back #{body}"
