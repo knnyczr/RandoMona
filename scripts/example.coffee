@@ -37,11 +37,7 @@ module.exports = (robot) ->
   robot.hear /funnies/i, (res) ->
     robot.http("https://api.giphy.com/v1/gifs/random?api_key=#{process.env.HUBOT_ENV_GIPHY}&tag=funny&rating=pg-13")
       .get() (err, res, body) ->
-        if res.statusCode isnt 200
-          res.send "Sorry something's wrong with the API #{err}"
-          return
-        else
-          res.send "😂"
+        res.send "Got back #{body}"
 
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
