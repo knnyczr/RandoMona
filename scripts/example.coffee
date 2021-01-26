@@ -35,8 +35,8 @@ module.exports = (robot) ->
     res.send res.random morningReplies
 
   robot.hear /funnies/i, (res) ->
-    res.reply "gotcha"
-    robot.http("https://api.giphy.com/v1/gifs/random?api_key=#{process.env.HUBOT_ENV_GIPHY}&tag=funny&rating=pg-13")
+    # res.reply "gotcha"
+    robot.http("https://api.giphy.com/v1/gifs/random?api_key=ncTLCF9pIPsnEC9wDMZAxRt90ajvmGbD&tag=funny&rating=pg-13")
       .header('Accept', 'application/json')
       .get() (err, res, body) ->
         data = JSON.parse body
