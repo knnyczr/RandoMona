@@ -32,7 +32,7 @@ module.exports = (robot) ->
       queue.pop()
 
   robot.hear /gmorning|good morning|Good Morning!/i, (res)->
-    res.send res.random morningReplies
+    res.messageRoom res.random morningReplies
 
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
