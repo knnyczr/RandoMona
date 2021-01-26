@@ -37,8 +37,10 @@ module.exports = (robot) ->
   robot.hear /funnies/i, (res) ->
     res.reply "gotcha"
     robot.http("https://api.giphy.com/v1/gifs/random?api_key=#{process.env.HUBOT_ENV_GIPHY}&tag=funny&rating=pg-13")
+      .header('Accept', 'application/json')
       .get() (err, res, body) ->
-        res.send "Got back #{body}"
+        data = JSON.parse body
+        res.send "Got back #{data.data.images.downsized_medium}"
 
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
