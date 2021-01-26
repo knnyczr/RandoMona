@@ -10,23 +10,23 @@
 
 students = require './students.js'
 
-module.exports = (robot) ->
+module.exports = (robot) -> 
   queue = []
 
   robot.respond /hi|hello/i, (res) ->
     res.send "How do you do?"
 
-  robot.respond /pick one|one|random one/i, (res) ->
+  robot.respond /pick one|pick|random one/i, (res) ->
     res.reply res.random students
 
   robot.hear /q me/i, (res) ->
     queue.push "#{res.message.user.name}"
-    res.send "You're in, #{res.message.user.name}!"
+    res.send "You're in, #{res.message.user}!"
     # res.send "You're in, #{robot.brain.userForName(res.message.user.name)}!"
   
-  robot.hear /next/i, (res) ->
+  robot.hear /next/i, (res) -> 
     if queue[0] is undefined 
-      res.send ":tada: The Queue is empty party on! :tada:"
+      res.send "🥳 The Queue is empty party on! 🥳"
     else
       res.reply "Next: #{queue[0]},"
       queue.pop()
