@@ -28,7 +28,7 @@ module.exports = (robot) ->
     if queue[0] is undefined 
       res.send "🥳 The Queue is empty party on! 🥳"
     else
-      res.reply "Next: #{queue[0]},"
+      res.reply "Next: @#{queue[0]},"
       queue.pop()
 
   # robot.hear /badger/i, (res) ->
