@@ -23,7 +23,6 @@ module.exports = (robot) ->
   robot.hear /q me/i, (res) ->
     queue.push "#{res.message.user.name}"
     res.send "You're in, @#{res.message.user.name}!"
-    # res.send "You're in, #{robot.brain.userForName(res.message.user.name)}!"
   
   robot.hear /next/i, (res) -> 
     if queue[0] is undefined 
@@ -32,12 +31,9 @@ module.exports = (robot) ->
       res.reply "Next: @#{queue[0]},"
       queue.pop()
 
-  robot.hear /gmorning|good morning|Good Morning!/i ->
+  robot.hear /gmorning|good morning|Good Morning!/i, (res)->
     res.send res.random morningReplies
 
-  # robot.hear /badger/i, (res) ->
-  #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
-  #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
