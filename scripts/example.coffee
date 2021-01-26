@@ -41,7 +41,7 @@ module.exports = (robot) ->
           res.send "Sorry something's wrong with the API #{err}"
           return
         else
-          res.send "😂 #{body}"
+          res.send "😂"
 
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
