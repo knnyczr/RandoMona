@@ -9,6 +9,7 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 students = require './students.js'
+morningReplies = ['Good Mornin\' to ya!', 'Good Morning 😄', 'Please hold...downloading coffee... GOOD MORNING! ☕']
 
 module.exports = (robot) -> 
   queue = []
@@ -30,6 +31,9 @@ module.exports = (robot) ->
     else
       res.reply "Next: @#{queue[0]},"
       queue.pop()
+
+  robot.hear /gmorning|good morning|Good Morning!/i ->
+    res.send res.random morningReplies
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
