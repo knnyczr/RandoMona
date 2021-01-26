@@ -21,7 +21,7 @@ module.exports = (robot) ->
 
   robot.hear /q me/i, (res) ->
     queue.push "#{res.message.user.name}"
-    res.send "You're in, #{res.message.user}!"
+    res.send "You're in, @#{res.message.user.name}!"
     # res.send "You're in, #{robot.brain.userForName(res.message.user.name)}!"
   
   robot.hear /next/i, (res) -> 
