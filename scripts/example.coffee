@@ -38,7 +38,11 @@ module.exports = (robot) ->
     # res.reply "gotcha"
     robot.http("https://api.giphy.com/v1/gifs/random?api_key=ncTLCF9pIPsnEC9wDMZAxRt90ajvmGbD&tag=funny&rating=pg-13")
       .get() (err, res, body) ->
-        # data = JSON.parse body
+        if err
+          res.reply "having some issues..."
+          robot.emit 'error', err, res
+          return
+        data = JSON.parse body
         res.send "Got back "
 
   # robot.respond /open the (.*) doors/i, (res) ->
