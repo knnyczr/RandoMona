@@ -21,8 +21,7 @@ module.exports = (robot) ->
     res.send "👋 hello there @#{res.match[1]}"
 
   robot.respond /pick one|pick|random one/i, (res) ->
-    res.reply "I pick... 👉"
-    res.reply res.random students
+    res.reply "I pick... 👉" res.random students
 
   robot.hear /q me/i, (res) ->
     queue.push "#{res.message.user.name}"
