@@ -17,7 +17,7 @@ module.exports = (robot) ->
   robot.respond /hi|hello/i, (res) ->
     res.send "How do you do?"
 
-  robot.respond /(welcome|say hi) @(.*)$/i, (res) ->
+  robot.respond /^welcome|say hi @(.*)$/i, (res) ->
     res.send "👋 hello there @#{res.match[1]}"
 
   robot.respond /pick one|pick|random one/i, (res) ->
