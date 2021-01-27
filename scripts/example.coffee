@@ -17,6 +17,9 @@ module.exports = (robot) ->
   robot.respond /hi|hello/i, (res) ->
     res.send "How do you do?"
 
+  robot.respond /(welcome|say hi) @(.*)$/i, (res) ->
+    res.send "👋 hello there @#{res.match[1]}"
+
   robot.respond /pick one|pick|random one/i, (res) ->
     res.reply res.random students
 
@@ -37,17 +40,21 @@ module.exports = (robot) ->
   robot.respond /back in (.*)$/i, (res) ->
     today = new Date
     hour = today.getHours()
-    hour = if hour >= 12 then hour - 12 else hour
+    sec = today.getSeconds()
     min = today.getMinutes() + parseInt(res.match[1])
+    hour = if hour >= 12 then hour - 12 else hour
+    # 60000 millieseconds = 1min
     # this is to check if the mins are over 60 mins or equal to 60 mins
     if min >= 60
       min = min - 60
       if min < 10
         min = "0".concat(min)
-      res.reply "@here back at: #{hour + 1}:#{min}"
+      res.reply "@here back at: #{hour + 1}:#{min}:#{sec} EST"
     # else we'll return the time we're back
     else
-      res.reply "@here back at: #{hour}:#{min}"
+      res.reply "@here back at: #{hour}:#{min}:#{sec} EST"
+
+    
 
 
 
