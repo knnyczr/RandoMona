@@ -34,15 +34,23 @@ module.exports = (robot) ->
   robot.hear /gmorning|good morning|Good Morning!/i, (res)->
     res.send res.random morningReplies
 
+  robot.respond /back in (.*)/i, (res) ->
+    today = new Date
+    time = today.getMinutes() + res.match[1]
+    res.send "@here back at #{time}"
+
+
+
+# EXPERIMENTAL
   robot.hear /funnies/i, (res) ->
     # res.reply "gotcha"
     robot.http("https://api.giphy.com/v1/gifs/random?api_key=ncTLCF9pIPsnEC9wDMZAxRt90ajvmGbD&tag=funny&rating=pg-13")
       .get() (err, res, body) ->
+      data = JSON.parse body
         if err
           res.reply "having some issues..."
           robot.emit 'error', err, res
           return
-        data = JSON.parse body
         res.send "Got back "
 
   # robot.respond /open the (.*) doors/i, (res) ->
