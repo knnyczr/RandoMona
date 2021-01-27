@@ -15,12 +15,13 @@ module.exports = (robot) ->
   queue = []
 
   robot.respond /hi|hello/i, (res) ->
-    res.send "How do you do?"
+    res.send "How do you do? 🤵‍♀️"
 
   robot.respond /welcome (.*)/i, (res) ->
     res.send "👋 hello there @#{res.match[1]}"
 
   robot.respond /pick one|pick|random one/i, (res) ->
+    res.reply "I pick... 👉"
     res.reply res.random students
 
   robot.hear /q me/i, (res) ->
