@@ -34,11 +34,20 @@ module.exports = (robot) ->
   robot.hear /gmorning|good morning|Good Morning!/i, (res)->
     res.send res.random morningReplies
 
-  robot.respond /back in (.*)/i, (res) ->
+  robot.respond /back in (.*)$/i, (res) ->
     today = new Date
     hour = today.getHours()
+    hour = if hour >= 12 then hour - 12 else hour
     min = today.getMinutes() + parseInt(res.match[1])
-    res.send "@here back at: #{hour}:#{min}"
+    # this is to check if the mins are over 60 mins or equal to 60 mins
+    if min >= 60
+      min = min - 60
+      if min < 10
+        min = "0".concat(min)
+      res.reply "@here back at: #{hour + 1}:#{min}"
+    # else we'll return the time we're back
+    else
+      res.reply "@here back at: #{hour}:#{min}"
 
 
 
